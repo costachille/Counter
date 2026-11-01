@@ -1,24 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Counter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Значение счётчика: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIV-IR-3kh">
+                                <rect key="frame" x="16" y="59" width="361" height="258"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="258" id="qxM-eC-aD5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="История изменений:" translatesAutoresizingMaskIntoConstraints="NO" id="xoH-VG-FA4">
+                                <rect key="frame" x="16" y="325" width="361" height="146"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="146" id="4Xa-md-KQs"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76J-mp-Smz">
+                                <rect key="frame" x="16" y="503" width="361" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="UQ7-J6-gPK"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="0.0" blue="0.01666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="+">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="plusButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rbD-fA-nep"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFd-eV-uav">
+                                <rect key="frame" x="16" y="591" width="361" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="kdm-nA-MOq"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="-">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="minusButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HUG-AG-hB2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZ8-SA-dVw">
+                                <rect key="frame" x="16" y="679" width="361" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="OA6-ox-IKV"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Сбросить"/>
+                                <connections>
+                                    <action selector="resetButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wvz-vF-vM5"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BZ8-SA-dVw" firstAttribute="trailing" secondItem="bFd-eV-uav" secondAttribute="trailing" id="250-uG-vPq"/>
+                            <constraint firstItem="bFd-eV-uav" firstAttribute="leading" secondItem="76J-mp-Smz" secondAttribute="leading" id="5zK-zs-aTf"/>
+                            <constraint firstItem="bFd-eV-uav" firstAttribute="top" secondItem="76J-mp-Smz" secondAttribute="bottom" constant="8" symbolic="YES" id="7Ea-I2-gau"/>
+                            <constraint firstItem="xoH-VG-FA4" firstAttribute="leading" secondItem="zIV-IR-3kh" secondAttribute="leading" id="Bdi-Xx-OLe"/>
+                            <constraint firstItem="76J-mp-Smz" firstAttribute="trailing" secondItem="xoH-VG-FA4" secondAttribute="trailing" id="CGi-5w-h7n"/>
+                            <constraint firstItem="zIV-IR-3kh" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="M6Y-K6-hlX"/>
+                            <constraint firstItem="76J-mp-Smz" firstAttribute="leading" secondItem="xoH-VG-FA4" secondAttribute="leading" id="Sdd-2B-MVu"/>
+                            <constraint firstItem="zIV-IR-3kh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="VbE-ts-AYh"/>
+                            <constraint firstItem="xoH-VG-FA4" firstAttribute="top" secondItem="zIV-IR-3kh" secondAttribute="bottom" constant="8" id="ZCu-8c-LhL"/>
+                            <constraint firstItem="76J-mp-Smz" firstAttribute="top" secondItem="xoH-VG-FA4" secondAttribute="bottom" constant="32" id="bwg-pn-Uyz"/>
+                            <constraint firstItem="bFd-eV-uav" firstAttribute="trailing" secondItem="76J-mp-Smz" secondAttribute="trailing" id="c8r-CX-ZaF"/>
+                            <constraint firstItem="BZ8-SA-dVw" firstAttribute="top" secondItem="bFd-eV-uav" secondAttribute="bottom" constant="8" symbolic="YES" id="cmL-C7-a4B"/>
+                            <constraint firstItem="xoH-VG-FA4" firstAttribute="trailing" secondItem="zIV-IR-3kh" secondAttribute="trailing" id="gB8-rz-Ige"/>
+                            <constraint firstItem="BZ8-SA-dVw" firstAttribute="leading" secondItem="bFd-eV-uav" secondAttribute="leading" id="nHP-c1-rdZ"/>
+                            <constraint firstItem="zIV-IR-3kh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tI0-NB-GH5"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="counterLabelView" destination="zIV-IR-3kh" id="vo1-Os-j7o"/>
+                        <outlet property="historyTextView" destination="xoH-VG-FA4" id="mJo-Jh-EI0"/>
+                        <outlet property="minusChangeButton" destination="bFd-eV-uav" id="9KW-7e-h6e"/>
+                        <outlet property="plusChangeButton" destination="76J-mp-Smz" id="ovK-F5-Sm4"/>
+                        <outlet property="resetCountButton" destination="BZ8-SA-dVw" id="Ktv-2O-wpR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="4"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
