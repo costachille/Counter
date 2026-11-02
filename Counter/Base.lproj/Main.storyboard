@@ -34,20 +34,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76J-mp-Smz">
-                                <rect key="frame" x="16" y="503" width="361" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="UQ7-J6-gPK"/>
-                                </constraints>
-                                <color key="tintColor" red="1" green="0.0" blue="0.01666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="+">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="plusButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rbD-fA-nep"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFd-eV-uav">
                                 <rect key="frame" x="16" y="591" width="361" height="80"/>
                                 <constraints>
@@ -71,6 +57,20 @@
                                 <buttonConfiguration key="configuration" style="tinted" title="Сбросить"/>
                                 <connections>
                                     <action selector="resetButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wvz-vF-vM5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76J-mp-Smz">
+                                <rect key="frame" x="16" y="503" width="361" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="UQ7-J6-gPK"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="0.0" blue="0.01666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="+">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="plusButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rbD-fA-nep"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -97,9 +97,6 @@
                     <connections>
                         <outlet property="counterLabelView" destination="zIV-IR-3kh" id="vo1-Os-j7o"/>
                         <outlet property="historyTextView" destination="xoH-VG-FA4" id="mJo-Jh-EI0"/>
-                        <outlet property="minusChangeButton" destination="bFd-eV-uav" id="9KW-7e-h6e"/>
-                        <outlet property="plusChangeButton" destination="76J-mp-Smz" id="ovK-F5-Sm4"/>
-                        <outlet property="resetCountButton" destination="BZ8-SA-dVw" id="Ktv-2O-wpR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
